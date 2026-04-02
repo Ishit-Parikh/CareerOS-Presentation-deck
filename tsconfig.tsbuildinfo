@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/SlideContent.tsx","./src/components/ui/AnimatedGridPattern.tsx","./src/components/ui/BoxComponents.tsx","./src/components/ui/DitheringBackground.tsx","./src/components/ui/Spotlight.tsx","./src/components/ui/hero-dithering-card.tsx","./src/data/slides.ts"],"version":"5.9.3"}

@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-background: #09090B;
+  --color-surface: #0F0F12;
+  --color-surface-2: #161619;
+  --color-foreground: #F4F4F5;
+  --color-muted-foreground: #71717A;
+  --color-border: #27272A;
+  --color-primary: #F59E0B;
+  --color-success: #34D399;
+  --color-destructive: #F87171;
+  --color-warning: #FB923C;
+  --color-muted: #18181B;
+}
+
+@layer base {
+  * {
+    border-radius: 2px;
+  }
+  
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  
+  .bg-background {
+    background-color: var(--color-background);
+  }
+  
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+  
+  .bg-surface-2 {
+    background-color: var(--color-surface-2);
+  }
+  
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+  
+  .text-muted-foreground {
+    color: var(--color-muted-foreground);
+  }
+  
+  .text-primary {
+    color: var(--color-primary);
+  }
+  
+  .text-success {
+    color: var(--color-success);
+  }
+  
+  .text-destructive {
+    color: var(--color-destructive);
+  }
+  
+  .text-warning {
+    color: var(--color-warning);
+  }
+  
+  .border-border {
+    border-color: var(--color-border);
+  }
+  
+  .bg-primary\/5 { background-color: rgba(245, 158, 11, 0.05); }
+  .bg-primary\/10 { background-color: rgba(245, 158, 11, 0.1); }
+  .bg-primary\/15 { background-color: rgba(245, 158, 11, 0.15); }
+  .bg-primary\/20 { background-color: rgba(245, 158, 11, 0.2); }
+  .bg-primary\/30 { background-color: rgba(245, 158, 11, 0.3); }
+  .bg-primary\/40 { background-color: rgba(245, 158, 11, 0.4); }
+  .bg-primary\/50 { background-color: rgba(245, 158, 11, 0.5); }
+  
+  .bg-success\/5 { background-color: rgba(52, 211, 153, 0.05); }
+  .bg-success\/20 { background-color: rgba(52, 211, 153, 0.2); }
+  .bg-success\/30 { background-color: rgba(52, 211, 153, 0.3); }
+  
+  .bg-destructive\/5 { background-color: rgba(248, 113, 113, 0.05); }
+  .bg-destructive\/20 { background-color: rgba(248, 113, 113, 0.2); }
+  .bg-destructive\/30 { background-color: rgba(248, 113, 113, 0.3); }
+  
+  .border-primary\/30 { border-color: rgba(245, 158, 11, 0.3); }
+  .border-primary\/40 { border-color: rgba(245, 158, 11, 0.4); }
+  .border-primary\/50 { border-color: rgba(245, 158, 11, 0.5); }
+  .border-success\/30 { border-color: rgba(52, 211, 153, 0.3); }
+  .border-destructive\/30 { border-color: rgba(248, 113, 113, 0.3); }
+  .border-border\/50 { border-color: rgba(39, 39, 42, 0.5); }
+  
+  .bg-surface\/50 { background-color: rgba(15, 15, 18, 0.5); }
+  .bg-surface\/80 { background-color: rgba(15, 15, 18, 0.8); }
+  
+  .from-primary\/30 {
+    --tw-gradient-from: rgba(245, 158, 11, 0.3);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+  }
+  
+  .to-transparent {
+    --tw-gradient-to: transparent;
+  }
+  
+  .shadow-primary\/20 {
+    --tw-shadow-color: rgba(245, 158, 11, 0.2);
+    --tw-shadow: var(--tw-shadow-colored);
+  }
+  
+  .shadow-primary\/30 {
+    --tw-shadow-color: rgba(245, 158, 11, 0.3);
+    --tw-shadow: var(--tw-shadow-colored);
+  }
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+  0% { transform: translateX(-50%) translateY(-50%); }
+  33% { transform: translateX(50%) translateY(-30%); }
+  66% { transform: translateX(30%) translateY(50%); }
+  100% { transform: translateX(-50%) translateY(-50%); }
+}
+
+.animate-spotlight {
+  animation: spotlight 8s ease-in-out infinite;
+}
