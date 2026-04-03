@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Keyboard } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { SlideContent } from './components/SlideContent'
 import { slides } from './data/slides'
 import { DitheringBackground } from './components/ui/DitheringBackground'
@@ -69,31 +69,6 @@ function App() {
       <DitheringBackground slideIndex={currentSlide} />
       
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6">
-        <header className="flex h-14 items-center justify-between border-b border-border/60 sm:h-16">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2"
-          >
-            <span className="font-display text-lg font-700 tracking-tight text-foreground">
-              Career<span className="text-primary">OS</span>
-            </span>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3"
-          >
-            <div className="hidden items-center gap-1.5 rounded-sm border border-border/50 bg-surface/50 px-2.5 py-1.5 sm:flex">
-              <Keyboard className="h-3 w-3 text-muted-foreground" />
-              <span className="font-mono text-[10px] text-muted-foreground">Arrow keys to navigate</span>
-            </div>
-            <span className="font-mono text-xs text-muted-foreground">
-              {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-            </span>
-          </motion.div>
-        </header>
-
         <main className="flex flex-1 items-center py-8 sm:py-12">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
